@@ -65,16 +65,20 @@ public class Grid implements Serializable {
 	 * and returns the matrix of all pits positions
 	 */
 	public int[][] generatePitsPositions(int nbPits) {
-		/*
 		for (int i = 0; i < nbPits; i++) {
-			pitPositionsMatrix[i][0] = generateRandom();
-			pitPositionsMatrix[i][1] = generateRandom();
-		}*/
+			pitPositionsMatrix[i][0] = (int)(4.0 * Math.random());
+			pitPositionsMatrix[i][1] = (int)(4.0 * Math.random());
+                        while(pitPositionsMatrix[i][0] == 2 && (pitPositionsMatrix[i][1] == 0 || pitPositionsMatrix[i][1] == 1))
+                        {
+                            pitPositionsMatrix[i][0] = (int)(4.0 * Math.random());
+                            pitPositionsMatrix[i][1] = (int)(4.0 * Math.random());
+                        }
+		}
 		
-		pitPositionsMatrix[0][0] = 1; pitPositionsMatrix[0][1] = 2; 
-		pitPositionsMatrix[1][0] = 4; pitPositionsMatrix[1][1] = 4;
-		pitPositionsMatrix[2][0] = 0; pitPositionsMatrix[2][1] = 4;
-		pitPositionsMatrix[3][0] = 3; pitPositionsMatrix[3][1] = 1;
+		//pitPositionsMatrix[0][0] = 1; pitPositionsMatrix[0][1] = 2; 
+		//pitPositionsMatrix[1][0] = 4; pitPositionsMatrix[1][1] = 4;
+		//pitPositionsMatrix[2][0] = 0; pitPositionsMatrix[2][1] = 4;
+		//pitPositionsMatrix[3][0] = 3; pitPositionsMatrix[3][1] = 1;
 		
 		return pitPositionsMatrix;
 	}

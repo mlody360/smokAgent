@@ -5,6 +5,8 @@ import java.awt.Frame;
 import java.awt.GridLayout;
 
 import environment.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 
 
@@ -29,6 +31,12 @@ public class GridGui extends Frame {
 		this.setBackground(Color.white);
 		this.setResizable(false);
 		this.setVisible(true);
+                this.addWindowListener ( new WindowAdapter () {
+		public void windowClosing ( WindowEvent evt )
+                    {
+                            System.exit(0);
+                    }
+                });
 	}
 	
 	
